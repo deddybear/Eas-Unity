@@ -1,0 +1,47 @@
+﻿Quedé en
+
+https://learn.unity.com/tutorial/live-sessions-on-ui#5c7f8528edbc2a002053b4b3
+
+video minuto 38. exacto
+
+333333E6
+
+FFFFFFFF
+000000FF
+C8C8C8FF
+
+1-	UNITY MENU 
+
+	.1-		Best Practices.
+	
+		* 	Coroutine: LOADING SLIDER BAR.	---listo!
+		->
+		I can optimize Coroutines, with the same Methodollogy applied in my Script  'LeftRightTest.cs', from my previous Project.
+		->
+		WaitFor...: MUST be Cached at the Start or Awake Method.
+		->
+		To cache in a Start or Awake Method:   StartCoroutine( IENumeratorMio )
+		->
+		To Cache 'IENumeratorMio' (thus making it reusable, by means of: StopCoroutine() y StartCoroutine(), in OnEnable() and OnDisable()... ).
+		->
+		yield return null; // It is already optimum: it waits until the END of the NEXT FRAME
+		
+---
+
+2-  IMPORTANT:  It features TEXTMESHPRO, but the PREFORMANCE CAN BE BETTER  (HOW?):
+
+Recommendations:
+
+
+    .1- REPLACE all STATIC TEXT (e.g.: Static LABELS) by:  Image (a Texture or Sprite ade in Photoshop [using 'Bicubic for optimal Reduction in size' for Rendering]). 
+
+    In Unity3D:   Use my CUSTOM UI MATERIAL, to make use of Static and Dynamic BATCHING).
+
+
+    .2- Only use TEXTMESHPRO TEXT Box in cases where you need DYNAMIC-CHANGING Text (for instance: in the Loading % Number - Progress Bar).
+
+
+    .3- Changing TEXTMESHPRO's Shader from ''SDF-Mobile-distance field'' to -> ''SDF-Mobile-Bitmap''  could serve as an Optimization, but You Shoul read how to MAKE AN HIGH QUALITY FONT ATLAS, because I tested the one that comes by 'default' for ARIAL FONT: and it Looked Blurry and did not pass the text.
+  
+  
+    
