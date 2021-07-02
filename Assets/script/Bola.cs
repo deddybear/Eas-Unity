@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Bola : MonoBehaviour
 {
-    public int kecepatan = 100;
+    public int kecepatan;
+    public string kesulitan;
     int touchPadle;
     Rigidbody2D rigid;
     int scoreBiru;
@@ -22,8 +23,8 @@ public class Bola : MonoBehaviour
     Power powerUp;
     Kontrol kiriProp;
     Kontrol kananProp;
-    
-    
+    public GameObject panelWin;
+    public Text textPemenang;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,7 @@ public class Bola : MonoBehaviour
 
         kiriProp  = padleKiri.GetComponent<Kontrol>();
         kananProp = padleKanan.GetComponent<Kontrol>();
-        powerUp     = power.GetComponent<Power>();
+        powerUp   = power.GetComponent<Power>();
 
         rigid = GetComponent<Rigidbody2D>();
         Vector2 arah = new Vector2(1,0).normalized;
@@ -52,12 +53,18 @@ public class Bola : MonoBehaviour
     {
         if (scoreBiru == 6)
         {
+            panelWin.SetActive(true);
+            textPemenang.text = "Biru PEMENANG !";
             Debug.Log("Pemenangnya Biru");
+            Time.timeScale = 0f;
         }
 
         if (scoreMerah == 6)
         {
+            panelWin.SetActive(true);
+            textPemenang.text = "Merah Pemenang !" ;
             Debug.Log("Pemenangnya Merah");
+            Time.timeScale = 0f;
         }
     }
 

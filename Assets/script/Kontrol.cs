@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Kontrol : MonoBehaviour
 {
-    public float kecepatan = 10.0f;
+    public float kecepatan;
     public string axis;
 
     public float batasAtas;
